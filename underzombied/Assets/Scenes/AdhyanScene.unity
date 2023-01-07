@@ -8242,6 +8242,7 @@ PrefabInstance:
 --- !u!1001 &1583756518339050038
 PrefabInstance:
   m_ObjectHideFlags: 0
+<<<<<<< HEAD
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1207034953}
@@ -8922,3 +8923,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edaedaa97818bc2eb8be8c5c896b2c7b, type: 3}
+=======
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048895196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0014a2253b24aadc69e4f27be748d0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gosc: {fileID: 0}
+  waypoints:
+  - {fileID: 2044482395}
+  - {fileID: 1375005944}
+  - {fileID: 180723660}
+  - {fileID: 1651942426}
+  - {fileID: 1118203127}
+  - {fileID: 1545218011}
+  - {fileID: 792263777}
+  - {fileID: 120912028}
+  - {fileID: 1047792334}
+  - {fileID: 732630851}
+  - {fileID: 48584750}
+  - {fileID: 1419619477}
+  - {fileID: 1872714401}
+  - {fileID: 883140740}
+  bod: {fileID: 0}
+>>>>>>> d136043dbe5a6c86d2e8ec5b73f581cf3ae27b1c
