@@ -44,7 +44,7 @@ public class TowerScript : MonoBehaviour
                 yFlip = 1;
             }
             if (r.collider != null){
-                r.transform.SendMessage("HitByTower");
+                r.transform.SendMessage("HitByTower", 20);
                 readyFire = 0;
             }
         }

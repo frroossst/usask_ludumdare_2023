@@ -8,3 +8,6 @@ underzombied/UserSettings/*
 underzombied/underzombied.sln
 *.csproj
 *Scene*
+underzombied/Assets/Scenes
+underzombied/Assets/Scenes/
+underzombied/Assets/Scenes/*
