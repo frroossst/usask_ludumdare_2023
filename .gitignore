@@ -6,3 +6,4 @@ underzombied/ProjectSettings/*
 underzombied/Temp/*
 underzombied/UserSettings/*
 underzombied/underzombied.sln
+*.csproj
