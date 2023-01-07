@@ -11,7 +11,7 @@ public class WaypointsScript : MonoBehaviour
     int waypointIndex = 0;
 
     private float moveSpeed = 1f;
-    public BoxCollider2D bod;
+    // public BoxCollider2D bod;
     void Start()
         {
         transform.position = waypoints[waypointIndex].transform.position;
@@ -33,12 +33,8 @@ public class WaypointsScript : MonoBehaviour
             SceneManager.LoadScene(2);
             }
         }
-        
-    void HitByTower()
-    {
-        Debug.Log("I am die");
-    }
  
+    // hitByTower() moved
     }
    
  
