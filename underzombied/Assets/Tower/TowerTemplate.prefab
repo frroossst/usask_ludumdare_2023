@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8986444437202143000}
   - component: {fileID: 4587282067024727051}
   - component: {fileID: 4972194106822243788}
+  - component: {fileID: 1700848657788297894}
   m_Layer: 0
   m_Name: TowerTemplate
   m_TagString: Untagged
@@ -97,4 +98,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09cf799f8fa4fef4d8aeafff82831247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemap: {fileID: 907295722268271793, guid: 022073cc1bea0654d89fa26d51041d8f, type: 3}
   tower: {fileID: 5922368960022864653, guid: e61ac92e3a5867041aaa01c5ec1a8bb2, type: 3}
+  money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
+  Cost: 0
+  bod: {fileID: 1700848657788297894}
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!61 &1700848657788297894
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933808113028105115}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

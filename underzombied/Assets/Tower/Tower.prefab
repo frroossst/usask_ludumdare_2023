@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1156052448016287621}
   - component: {fileID: -8660523750181199551}
   - component: {fileID: 7702690825906105648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   Enemy:
     serializedVersion: 2
     m_Bits: 64
+  threshold: 0
 --- !u!61 &7702690825906105648
 BoxCollider2D:
   m_ObjectHideFlags: 0
