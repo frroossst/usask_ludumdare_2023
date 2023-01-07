@@ -36,5 +36,9 @@ public class TowerTemplateScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1)){
             Destroy(gameObject);
         }
+        if (Input.GetKeyDown("space"))
+            {
+            Debug.Log("placed a crop");
+            }
     }
 }
