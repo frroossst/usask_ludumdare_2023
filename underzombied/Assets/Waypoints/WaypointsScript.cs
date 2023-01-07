@@ -5,10 +5,9 @@ using UnityEngine;
 public class WaypointsScript : MonoBehaviour
     {
     public Transform[] waypoints;
-
     int waypointIndex = 0;
 
-    public float moveSpeed = 0.001f;
+    private float moveSpeed = 1f;
 
     void Start()
         {
@@ -17,11 +16,9 @@ public class WaypointsScript : MonoBehaviour
 
     void Update()
         {
-
-        float step = moveSpeed * Time.deltaTime;
-        step = 0;
+        float step =  moveSpeed * Time.deltaTime;
         
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, step);
 
         if (transform.position == waypoints[waypointIndex].transform.position)
             {
