@@ -17,7 +17,7 @@ public class CameraScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && transform.position.x < 9.55){
             bod.velocity = new Vector2(8, 0);
         }
-        else if (Input.GetKey(KeyCode.A) && transform.position.x > 2.4){
+        else if (Input.GetKey(KeyCode.A) && transform.position.x > 2.5){
             bod.velocity = new Vector2(-8, 0);
         }
         else{
