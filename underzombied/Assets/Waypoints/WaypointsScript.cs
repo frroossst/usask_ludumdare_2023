@@ -30,7 +30,7 @@ public class WaypointsScript : MonoBehaviour
         
         if (waypointIndex == waypoints.Length)
             {
-            SceneManager.LoadScene("GameOverScene");
+            SceneManager.LoadScene(2);
             }
         }
 
