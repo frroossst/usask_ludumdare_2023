@@ -17,7 +17,11 @@ public class WaypointsScript : MonoBehaviour
 
     void Update()
         {
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, moveSpeed);
+
+        float step = moveSpeed * Time.deltaTime;
+        step = 0;
+        
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, step);
 
         if (transform.position == waypoints[waypointIndex].transform.position)
             {
@@ -29,5 +33,6 @@ public class WaypointsScript : MonoBehaviour
             waypointIndex = 0;
             }
         }
+
  
     }
