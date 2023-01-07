@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class TowerTemplateScript : MonoBehaviour
 {
+    public Tilemap tilemap;
     public GameObject tower;
     private Vector2 mouse;
     // Start is called before the first frame update
@@ -18,8 +20,9 @@ public class TowerTemplateScript : MonoBehaviour
         mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(Mathf.Round(mouse.x + 0.5f) -0.5f, Mathf.Round(mouse.y + 0.5f) - 0.5f);
 
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0) && tilemap.HasTile(new Vector3Int(Mathf.FloorToInt(Mathf.Round(mouse.x + 0.5f) -0.5f), Mathf.FloorToInt(Mathf.Round(mouse.y + 0.5f) - 0.5f)))){
             Instantiate(tower, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+            tilemap.SetTile(new Vector3Int(Mathf.FloorToInt(Mathf.Round(mouse.x + 0.5f) -0.5f), Mathf.FloorToInt(Mathf.Round(mouse.y + 0.5f) - 0.5f)),null);
         }
     }
 }
