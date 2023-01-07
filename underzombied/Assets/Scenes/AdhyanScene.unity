@@ -3998,6 +3998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 4972194106822243788, guid: 31054b4c6ab03874b926a684ea49936a, type: 3}
+      propertyPath: tilemap
+      value: 
+      objectReference: {fileID: 130550875}
     - target: {fileID: 8986444437202143000, guid: 31054b4c6ab03874b926a684ea49936a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8399,6 +8403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0014a2253b24aadc69e4f27be748d0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gosc: {fileID: 0}
   waypoints:
   - {fileID: 2044482395}
   - {fileID: 1375005944}
@@ -8414,3 +8419,4 @@ MonoBehaviour:
   - {fileID: 1419619477}
   - {fileID: 1872714401}
   - {fileID: 883140740}
+  bod: {fileID: 0}
