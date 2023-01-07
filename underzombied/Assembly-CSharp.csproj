@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Camera/CameraScript.cs" />
+     <Compile Include="Assets/Waypoints/WaypointsScript.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/media/home/OS/Unity/2021.3.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
