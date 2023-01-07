@@ -14,10 +14,10 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D) && transform.position.x < 11){
+        if (Input.GetKey(KeyCode.D) && transform.position.x < 9.55){
             bod.velocity = new Vector2(8, 0);
         }
-        else if (Input.GetKey(KeyCode.A) && transform.position.x > 0){
+        else if (Input.GetKey(KeyCode.A) && transform.position.x > 2.4){
             bod.velocity = new Vector2(-8, 0);
         }
         else{
