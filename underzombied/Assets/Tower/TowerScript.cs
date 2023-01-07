@@ -4,19 +4,52 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public GameObject back;
+    public BoxCollider2D bod;
+    public LayerMask Enemy;
+    private float readyFire;
+    public float threshold;
+    private float x;
+    private float y;
+    private int xFlip;
+    private int yFlip;
     // Start is called before the first frame update
     void Start()
     {
-        
+        threshold = 5f;
+        readyFire = 0f;
+        x = 1;
+        y = 0;
+        xFlip = -1;
+        yFlip = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)){
-            back.GetComponent<SpriteRenderer>().color = Color.yellow;
+        if (readyFire >= 1){
+            RaycastHit2D r = Physics2D.Raycast(bod.bounds.center, new Vector2(x,y), 10f, Enemy);
+            Debug.DrawRay(bod.bounds.center, new Vector3(x,y, 0) * (10f), Color.black);
+            x = x + 2f * xFlip * Time.deltaTime;
+            y = y + 2f * yFlip * Time.deltaTime;
+            if (x >= 1){
+                xFlip = -1;
+            }
+            else if (x <= -1){
+                xFlip = 1;
+            }
+            if (y >= 1){
+                yFlip = -1;
+            }
+            else if (y <= -1){
+                yFlip = 1;
+            }
+            if (r.collider != null){
+                r.transform.SendMessage("HitByTower");
+                readyFire = 0;
+            }
+        }
+        else{
+            readyFire = readyFire + Time.deltaTime / threshold;
         }
     }
 }
