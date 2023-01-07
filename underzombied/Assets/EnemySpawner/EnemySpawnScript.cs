@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EnemySpawnScript : MonoBehaviour
     {
@@ -17,6 +18,7 @@ public class EnemySpawnScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
         {
+        Debug.Log("default enemt in Start() " + defaultEnemy);
         StartCoroutine(spawnEnemy(defaultSwarmerInterval, defaultEnemy));
         }
 
@@ -28,14 +30,32 @@ public class EnemySpawnScript : MonoBehaviour
 
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
         {
-        counter++;
-        if (counter % 10 == 0 && defaultSwarmerInterval > 2)
+        if (enemy == null)
             {
-            defaultSwarmerInterval -= 2;
+
             }
-        Debug.Log(counter);
-        yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(spawnPoint_x, spawnPoint_y, spawnPoint_z), Quaternion.identity);
-        StartCoroutine(spawnEnemy(interval, enemy));
+        else
+            {
+            counter++;
+            // if (counter % 10 == 0 && defaultSwarmerInterval > 2)
+            //     {
+            //     defaultSwarmerInterval -= 2;
+            //     }
+            Debug.Log(counter);
+            yield return new WaitForSeconds(interval);
+            Debug.Log("EnemySpawnScript: before inst");
+            try
+                {
+                GameObject newEnemy = Instantiate(enemy, new Vector3(spawnPoint_x, spawnPoint_y, spawnPoint_z), Quaternion.identity);
+                }
+            catch (Exception e)
+                {
+                Debug.Log("error: " + e);
+                Debug.Log("deafult enemy: " + defaultEnemy);
+                }
+            Debug.Log("EnemySpawnScript: after inst");
+            StartCoroutine(spawnEnemy(interval, enemy));
+            }
+
         }
     }

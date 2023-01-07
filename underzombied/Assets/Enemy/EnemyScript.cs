@@ -6,12 +6,14 @@ public class EnemyScript : MonoBehaviour
 {
     public BoxCollider2D bod;
 
+    public int health = 100;
+
     private string id = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
@@ -20,8 +22,14 @@ public class EnemyScript : MonoBehaviour
         
     }
 
-    void HitByTower()
+    void HitByTower(int damage)
     {
-        Debug.Log("I am die: " + id);
+        health -= damage;
+        Debug.Log("I am die: " + id + " health: " + health);
+        if (health <= 0)
+            {
+            if (gameObject != null)
+                Destroy(gameObject); // instance management
+            }
     }
 }
