@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaypointsScript : MonoBehaviour
     {
+    public GameOverScript gosc;
+
     public Transform[] waypoints;
     int waypointIndex = 0;
 
@@ -27,7 +30,7 @@ public class WaypointsScript : MonoBehaviour
         
         if (waypointIndex == waypoints.Length)
             {
-            waypointIndex = 0;
+            SceneManager.LoadScene("GameOverScene");
             }
         }
         
