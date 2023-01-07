@@ -37,10 +37,10 @@ public class EnemySpawnScript : MonoBehaviour
         else
             {
             counter++;
-            // if (counter % 10 == 0 && defaultSwarmerInterval > 2)
-            //     {
-            //     defaultSwarmerInterval -= 2;
-            //     }
+            if (counter % 10 == 0 && defaultSwarmerInterval > 2)
+                {
+                defaultSwarmerInterval -= 2;
+                }
             Debug.Log(counter);
             yield return new WaitForSeconds(interval);
             Debug.Log("EnemySpawnScript: before inst");
