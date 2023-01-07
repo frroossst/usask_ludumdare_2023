@@ -41,9 +41,8 @@ public class EnemySpawnScript : MonoBehaviour
                 {
                 defaultSwarmerInterval -= 2;
                 }
-            Debug.Log(counter);
+
             yield return new WaitForSeconds(interval);
-            Debug.Log("EnemySpawnScript: before inst");
             try
                 {
                 GameObject newEnemy = Instantiate(enemy, new Vector3(spawnPoint_x, spawnPoint_y, spawnPoint_z), Quaternion.identity);
@@ -51,9 +50,7 @@ public class EnemySpawnScript : MonoBehaviour
             catch (Exception e)
                 {
                 Debug.Log("error: " + e);
-                Debug.Log("deafult enemy: " + defaultEnemy);
                 }
-            Debug.Log("EnemySpawnScript: after inst");
             StartCoroutine(spawnEnemy(interval, enemy));
             }
 
