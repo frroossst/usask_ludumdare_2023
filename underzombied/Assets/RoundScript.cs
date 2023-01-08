@@ -11,11 +11,13 @@ public class RoundScript : MonoBehaviour
     public int round;
     public float time;
     public float roundTime;
+    public int startingMoney;
     // Start is called before the first frame update
     void Start()
     {
         time = 0;
         round = 1;
+        money.GetComponent<MoneyScript>().initial(startingMoney);
     }
 
     // Update is called once per frame

@@ -101,11 +101,12 @@ MonoBehaviour:
   tilemap: {fileID: 907295722268271793, guid: 022073cc1bea0654d89fa26d51041d8f, type: 3}
   tower: {fileID: 8954814932352426332, guid: fa378712875ee144c99df52616320ae5, type: 3}
   money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
-  Cost: 100
+  Cost: 250
   bod: {fileID: 5958903461813971123}
   towerLayer:
     serializedVersion: 2
     m_Bits: 256
+  rangeView: {fileID: 5998717763780747173, guid: ba2dda8c84ab625489dc0f2194a01b5e, type: 3}
 --- !u!61 &5958903461813971123
 BoxCollider2D:
   m_ObjectHideFlags: 0

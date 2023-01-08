@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public GameObject money;
     public BoxCollider2D bod;
 
     public int health = 100;

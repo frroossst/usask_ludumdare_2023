@@ -25,4 +25,7 @@ public class MoneyScript : MonoBehaviour
     public void takeMoney(int MoneyTaken){
         CurrentMoney = CurrentMoney - MoneyTaken;
     }
+    public void initial(int StartingMoney){
+        CurrentMoney = StartingMoney;
+    }
 }

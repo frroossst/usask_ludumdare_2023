@@ -20,7 +20,7 @@ public class TowerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        readyFire = 0f;
+        readyFire = threshold;
         fireTime = 0.5f;
         x = 1;
         y = 0;

@@ -14,6 +14,6 @@ public class SquareScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(cam.transform.position.x + 16.1f, transform.position.y, -1.3f);
+        transform.position = new Vector3(cam.transform.position.x + 11.9f, transform.position.y, -1.3f);
     }
 }
