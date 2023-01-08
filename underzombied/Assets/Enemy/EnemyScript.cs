@@ -13,6 +13,8 @@ public class EnemyScript : MonoBehaviour
 
     private string id = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+    private GameObject soundbar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,10 @@ public class EnemyScript : MonoBehaviour
             {
             if (gameObject != null)
                 money.GetComponent<MoneyScript>().addMoney(dieCoins);
+
+                soundbar = GameObject.FindWithTag("soundbar");
+                soundbar.GetComponent<AudioManagerScript>().Play("enemyDie");
+
                 Destroy(gameObject); // instance management
             }
     }
