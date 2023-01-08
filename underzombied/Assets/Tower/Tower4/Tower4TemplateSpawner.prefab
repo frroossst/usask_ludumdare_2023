@@ -50,6 +50,7 @@ MonoBehaviour:
   Background: {fileID: 1479258136062683815, guid: 14913aba68eaa4d429f2b9cc807602b4, type: 3}
   Selected: {fileID: 5292427797758806888, guid: f400a107d9a9b4a45a83a0f711115c93, type: 3}
   selected: 0
+  panel: {fileID: 0}
 --- !u!212 &8489774931514435471
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91,7 +92,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 39c29472cabd90a46832d036e2f98df8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a939e9fafdca644dbce9cf2c542b8d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

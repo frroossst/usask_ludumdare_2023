@@ -34,8 +34,8 @@ public class TowerScript : MonoBehaviour
         if (readyFire >= 1){
             RaycastHit2D r = Physics2D.Raycast(bod.bounds.center, new Vector2(x,y), range, Enemy);
             Debug.DrawRay(bod.bounds.center, new Vector3(x,y, 0) * (range), Color.black);
-            x = x + 2f * xFlip * Time.deltaTime;
-            y = y + 2f * yFlip * Time.deltaTime;
+            x = x + 2f * xFlip * Time.deltaTime * 2;
+            y = y + 2f * yFlip * Time.deltaTime * 2;
             if (x >= 1){
                 xFlip = -1;
             }

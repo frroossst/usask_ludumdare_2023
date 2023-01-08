@@ -10,7 +10,8 @@ public class WaypointsScript : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex = 0;
 
-    private float moveSpeed = 1f;
+    private float moveSpeed = 1.5f;
+  
     // public BoxCollider2D bod;
     void Start()
         {
@@ -19,6 +20,7 @@ public class WaypointsScript : MonoBehaviour
 
     void Update()
         {
+
         float step =  moveSpeed * Time.deltaTime;
         
         transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].transform.position, step);

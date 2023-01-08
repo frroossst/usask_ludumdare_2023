@@ -8,7 +8,7 @@ public class EnemySpawnScript : MonoBehaviour
     [SerializeField]
     private GameObject defaultEnemy;
 
-    private float defaultSwarmerInterval = 10f;
+    private float defaultSwarmerInterval = 5f;
     private float counter = 0;
     private float spawnPoint_x = -15f;
     private float spawnPoint_y = -4f;
@@ -36,10 +36,11 @@ public class EnemySpawnScript : MonoBehaviour
         else
             {
             counter++;
-            if (counter % 10 == 0 && defaultSwarmerInterval > 2)
+            if (counter % 5 == 0 && defaultSwarmerInterval > 0.5)
                 {
-                defaultSwarmerInterval -= 2;
+                defaultSwarmerInterval -= 0.5f;
                 }
+            interval = defaultSwarmerInterval;
 
             yield return new WaitForSeconds(interval);
             try
@@ -52,6 +53,5 @@ public class EnemySpawnScript : MonoBehaviour
                 }
             StartCoroutine(spawnEnemy(interval, enemy));
             }
-
         }
     }
