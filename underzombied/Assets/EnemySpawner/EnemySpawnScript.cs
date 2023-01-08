@@ -36,9 +36,15 @@ public class EnemySpawnScript : MonoBehaviour
         else
             {
             counter++;
-            if (counter % 5 == 0 && defaultSwarmerInterval > 0.5)
+            if (counter % 7 == 0 && defaultSwarmerInterval > 0.3f)
                 {
-                defaultSwarmerInterval -= 0.4f;
+                    if (defaultSwarmerInterval <= 0.7f){
+                        defaultSwarmerInterval = 0.3f;
+                    }
+                    else{
+                        defaultSwarmerInterval -= 0.4f;
+                    }
+                
                 }
             interval = defaultSwarmerInterval;
 

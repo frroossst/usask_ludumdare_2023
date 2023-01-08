@@ -29,6 +29,6 @@ public class RoundScript : MonoBehaviour
             roundtext.text = "Round: " + round;
             time = 0;
         }
-        moneytext.text = "Money: \n" + money.GetComponent<MoneyScript>().getMoney();
+        moneytext.text = "Gold: \n" + money.GetComponent<MoneyScript>().getMoney();
     }
 }

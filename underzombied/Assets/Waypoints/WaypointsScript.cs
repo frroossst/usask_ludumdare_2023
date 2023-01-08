@@ -10,7 +10,7 @@ public class WaypointsScript : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex = 0;
 
-    private float moveSpeed = 1.5f;
+    private float moveSpeed = 1.3f;
   
     // public BoxCollider2D bod;
     void Start()
