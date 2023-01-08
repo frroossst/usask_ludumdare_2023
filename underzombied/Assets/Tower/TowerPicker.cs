@@ -8,15 +8,18 @@ public class TowerPicker : MonoBehaviour
     public GameObject Background;
     public GameObject Selected;
     public int selected;
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
         selected = 0;
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(1)){
             selected = 0;
             Background.GetComponent<SpriteRenderer>().color = Color.white;
@@ -33,10 +36,12 @@ public class TowerPicker : MonoBehaviour
     }
     void OnMouseEnter(){
         Background.GetComponent<SpriteRenderer>().color = Color.yellow;
+        panel.SetActive(true);
     }
     void OnMouseExit(){
         if (selected == 0){
             Background.GetComponent<SpriteRenderer>().color = Color.white;
         }
+        panel.SetActive(false);
     }
 }
