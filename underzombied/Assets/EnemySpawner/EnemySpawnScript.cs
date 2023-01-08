@@ -10,7 +10,6 @@ public class EnemySpawnScript : MonoBehaviour
 
     private float defaultSwarmerInterval = 10f;
     private float counter = 0;
-
     private float spawnPoint_x = -15f;
     private float spawnPoint_y = -4f;
     private float spawnPoint_z = -1f;

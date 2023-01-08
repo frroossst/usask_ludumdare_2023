@@ -16,10 +16,12 @@ public class TowerScript : MonoBehaviour
     public GameObject selected;
     public float range;
     public int damage;
+    public float fireTime;
     // Start is called before the first frame update
     void Start()
     {
         readyFire = 0f;
+        fireTime = 0.5f;
         x = 1;
         y = 0;
         xFlip = -1;
@@ -52,15 +54,18 @@ public class TowerScript : MonoBehaviour
                 laser.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
                 laser.SetPosition(1, r.point);
                 laser.enabled = true;
+                fireTime = 0;
             }
         }
         else{
             readyFire = readyFire + Time.deltaTime / threshold;
         }
-        if (readyFire > 0.1){
+        if (fireTime >= 0.5f){
             laser.enabled = false;
-        }
+        } 
+        fireTime = fireTime + Time.deltaTime;
     }
+    
     void OnMouseOver(){
         if (Input.GetMouseButtonDown(1) && selected.GetComponent<SelectedScript>().getSelected() == 0){
             Destroy(gameObject);
