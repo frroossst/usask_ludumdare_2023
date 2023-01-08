@@ -14,6 +14,8 @@ public class TowerScript : MonoBehaviour
     private int yFlip;
     public LineRenderer laser;
     public GameObject selected;
+    public float range;
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,8 @@ public class TowerScript : MonoBehaviour
     void Update()
     {
         if (readyFire >= 1){
-            RaycastHit2D r = Physics2D.Raycast(bod.bounds.center, new Vector2(x,y), 10f, Enemy);
-            Debug.DrawRay(bod.bounds.center, new Vector3(x,y, 0) * (10f), Color.black);
+            RaycastHit2D r = Physics2D.Raycast(bod.bounds.center, new Vector2(x,y), range, Enemy);
+            Debug.DrawRay(bod.bounds.center, new Vector3(x,y, 0) * (range), Color.black);
             x = x + 2f * xFlip * Time.deltaTime;
             y = y + 2f * yFlip * Time.deltaTime;
             if (x >= 1){
@@ -45,7 +47,7 @@ public class TowerScript : MonoBehaviour
                 yFlip = 1;
             }
             if (r.collider != null){
-                r.transform.SendMessage("HitByTower", 20);
+                r.transform.SendMessage("HitByTower", damage);
                 readyFire = 0;
                 laser.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
                 laser.SetPosition(1, r.point);
