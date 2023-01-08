@@ -128,6 +128,6 @@ MonoBehaviour:
   Background: {fileID: 689225348709823491, guid: aca8695fe0354254782682f71b66be20, type: 3}
   crop: {fileID: 193625596713072133, guid: 6b130f28b3277074d84ad36b88333286, type: 3}
   Selected: {fileID: 5292427797758806888, guid: f400a107d9a9b4a45a83a0f711115c93, type: 3}
-  timeAlive: 10
+  timeAlive: 90
   money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
-  price: 10
+  price: 25

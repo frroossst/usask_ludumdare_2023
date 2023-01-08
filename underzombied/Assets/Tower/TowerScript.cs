@@ -17,6 +17,9 @@ public class TowerScript : MonoBehaviour
     public float range;
     public int damage;
     public float fireTime;
+
+    private GameObject soundbar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,9 @@ public class TowerScript : MonoBehaviour
                 laser.SetPosition(1, r.point);
                 laser.enabled = true;
                 fireTime = 0;
+
+                soundbar = GameObject.FindWithTag("soundbar");
+                soundbar.GetComponent<AudioManagerScript>().Play("laserShoot");
             }
         }
         else{

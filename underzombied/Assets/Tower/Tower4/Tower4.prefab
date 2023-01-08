@@ -107,7 +107,7 @@ MonoBehaviour:
   laser: {fileID: 1966733721530888581}
   selected: {fileID: 5292427797758806888, guid: f400a107d9a9b4a45a83a0f711115c93, type: 3}
   range: 10
-  damage: 30
+  damage: 15
   fireTime: 0
 --- !u!61 &3707193184840772557
 BoxCollider2D:

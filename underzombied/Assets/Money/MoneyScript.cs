@@ -5,10 +5,11 @@ using UnityEngine;
 public class MoneyScript : MonoBehaviour
 {
     public int CurrentMoney;
+
+    private GameObject soundbar;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -20,12 +21,14 @@ public class MoneyScript : MonoBehaviour
         return CurrentMoney;
     }
     public void addMoney(int MoneyAdded){
-        Debug.Log("adding money");
         CurrentMoney = CurrentMoney + MoneyAdded;
-        Debug.Log("curr money: " + CurrentMoney);
+        soundbar = GameObject.FindWithTag("soundbar");
+        soundbar.GetComponent<AudioManagerScript>().Play("addMoney");
     }
     public void takeMoney(int MoneyTaken){
         CurrentMoney = CurrentMoney - MoneyTaken;
+        soundbar = GameObject.FindWithTag("soundbar");
+        soundbar.GetComponent<AudioManagerScript>().Play("takeMoney");
     }
     public void initial(int StartingMoney){
         CurrentMoney = StartingMoney;
