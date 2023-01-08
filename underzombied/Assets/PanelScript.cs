@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquareScript : MonoBehaviour
+public class PanelScript : MonoBehaviour
 {
-    public Camera cam;
+    private Vector2 mouse;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class SquareScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(cam.transform.position.x + 16.1f, transform.position.y, -0.1f);
+    //transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 }
