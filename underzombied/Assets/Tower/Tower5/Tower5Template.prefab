@@ -101,7 +101,7 @@ MonoBehaviour:
   tilemap: {fileID: 907295722268271793, guid: 022073cc1bea0654d89fa26d51041d8f, type: 3}
   tower: {fileID: 4672915673177521190, guid: c5651410f55176840af31021d673183f, type: 3}
   money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
-  Cost: 400
+  Cost: 600
   bod: {fileID: 1111526290712135859}
   towerLayer:
     serializedVersion: 2

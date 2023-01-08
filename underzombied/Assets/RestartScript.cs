@@ -16,6 +16,9 @@ public class RestartScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0)){
             SceneManager.LoadScene(1);
         }
+        if (Input.GetKeyDown(KeyCode.Space)){
+            SceneManager.LoadScene(1);
+        }
     }
     void OnMouseDown(){
         Debug.Log("clicked");

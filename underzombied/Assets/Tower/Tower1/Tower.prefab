@@ -103,7 +103,7 @@ MonoBehaviour:
   Enemy:
     serializedVersion: 2
     m_Bits: 64
-  threshold: 5
+  threshold: 3
   laser: {fileID: 4817955602309625720}
   selected: {fileID: 5292427797758806888, guid: f400a107d9a9b4a45a83a0f711115c93, type: 3}
   range: 5
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.46, y: 0.49}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

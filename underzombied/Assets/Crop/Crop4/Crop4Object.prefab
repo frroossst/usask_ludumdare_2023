@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToWait: 90
-  goldHarvest: 100
+  goldHarvest: 125
   money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
