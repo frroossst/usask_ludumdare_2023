@@ -13,6 +13,8 @@ public class AudioManagerScript : MonoBehaviour
 
     public AudioSource enemyDieSound;
 
+    public AudioSource noMoneySound;
+
     private List<AudioSource> soundsToPlay;
 
     // Start is called before the first frame update
@@ -49,6 +51,10 @@ public class AudioManagerScript : MonoBehaviour
         else if (type.Equals("enemyDie"))
             {
             soundsToPlay.Add(enemyDieSound);
+            }
+        else if (type.Equals("noMoney"))
+            {
+            soundsToPlay.Add(noMoneySound);
             }
         
         }

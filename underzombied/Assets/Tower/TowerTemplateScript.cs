@@ -13,6 +13,8 @@ public class TowerTemplateScript : MonoBehaviour
     public BoxCollider2D bod;
     public LayerMask towerLayer;
     public GameObject rangeView;
+
+    private GameObject soundbar;
     public float timer = 0f;
 
      // Start is called before the first frame update
@@ -33,9 +35,18 @@ public class TowerTemplateScript : MonoBehaviour
             transform.position = new Vector3(Mathf.Round(mouse.x + 0.5f) -0.5f, Mathf.Round(mouse.y + 0.5f) - 0.5f, -1);
             RaycastHit2D r = Physics2D.Raycast(bod.bounds.center, transform.up, 0.1f, towerLayer);
 
-            if (Input.GetMouseButtonDown(0) && tilemap.HasTile(new Vector3Int(Mathf.FloorToInt(Mathf.Round(mouse.x + 0.5f) -0.5f), Mathf.FloorToInt(Mathf.Round(mouse.y + 0.5f) - 0.5f))) && money.GetComponent<MoneyScript>().getMoney() >= Cost && r.collider == null){
-                Instantiate(tower, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
-                money.GetComponent<MoneyScript>().takeMoney(Cost);
+            if (Input.GetMouseButtonDown(0) && tilemap.HasTile(new Vector3Int(Mathf.FloorToInt(Mathf.Round(mouse.x + 0.5f) -0.5f), Mathf.FloorToInt(Mathf.Round(mouse.y + 0.5f) - 0.5f))) && r.collider == null)
+                {
+                if (money.GetComponent<MoneyScript>().getMoney() >= Cost )
+                    {
+                    Instantiate(tower, new Vector3(transform.position.x, transform.position.y, -1), Quaternion.identity);
+                    money.GetComponent<MoneyScript>().takeMoney(Cost);
+                    }
+                else
+                    {
+                    soundbar = GameObject.FindWithTag("soundbar");
+                    soundbar.GetComponent<AudioManagerScript>().Play("noMoney");
+                    }
             }
             if (Input.GetMouseButtonDown(1)){
                 Destroy(gameObject);
