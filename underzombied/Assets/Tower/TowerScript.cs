@@ -12,10 +12,11 @@ public class TowerScript : MonoBehaviour
     private float y;
     private int xFlip;
     private int yFlip;
+    public LineRenderer laser;
+    public GameObject selected;
     // Start is called before the first frame update
     void Start()
     {
-        threshold = 5f;
         readyFire = 0f;
         x = 1;
         y = 0;
@@ -46,10 +47,21 @@ public class TowerScript : MonoBehaviour
             if (r.collider != null){
                 r.transform.SendMessage("HitByTower", 20);
                 readyFire = 0;
+                laser.SetPosition(0, new Vector3(transform.position.x, transform.position.y, transform.position.z));
+                laser.SetPosition(1, r.point);
+                laser.enabled = true;
             }
         }
         else{
             readyFire = readyFire + Time.deltaTime / threshold;
+        }
+        if (readyFire > 0.1){
+            laser.enabled = false;
+        }
+    }
+    void OnMouseOver(){
+        if (Input.GetMouseButtonDown(1) && selected.GetComponent<SelectedScript>().getSelected() == 0){
+            Destroy(gameObject);
         }
     }
 }

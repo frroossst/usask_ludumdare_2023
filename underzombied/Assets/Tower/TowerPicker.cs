@@ -6,6 +6,7 @@ public class TowerPicker : MonoBehaviour
 {
     public GameObject towerTemplate;
     public GameObject Background;
+    public GameObject Selected;
     public int selected;
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,16 @@ public class TowerPicker : MonoBehaviour
         if (Input.GetMouseButtonDown(1)){
             selected = 0;
             Background.GetComponent<SpriteRenderer>().color = Color.white;
+            Selected.GetComponent<SelectedScript>().setSelected(0);
         }
     }
     void OnMouseDown(){
-        Instantiate(towerTemplate, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-        selected = 1;
+        if (Selected.GetComponent<SelectedScript>().getSelected() == 0){
+            Instantiate(towerTemplate, new Vector3(transform.position.x, transform.position.y, -0.9f), Quaternion.identity);
+            selected = 1;
+            Selected.GetComponent<SelectedScript>().setSelected(1);
+        }
+        
     }
     void OnMouseEnter(){
         Background.GetComponent<SpriteRenderer>().color = Color.yellow;
