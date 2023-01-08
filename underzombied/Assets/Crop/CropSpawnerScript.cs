@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CropSpawnerScript : MonoBehaviour
 {
-    
+    public GameObject panel;
+    public GameObject Background;
     private Vector3 referencevector = new Vector3(0.0f, 0.0f, 0.0f);
     public GameObject crop;
-
+    public GameObject Selected;
     public float timeAlive;
+    public GameObject money;
+    public int price;
 
     private SortedDictionary<int, Vector3> spawn_map = new SortedDictionary<int, Vector3>();
 
@@ -50,6 +53,7 @@ public class CropSpawnerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    panel.SetActive(false);
     for (int i = 0; i < 15; i++)
         {
         map_occupied[i] = false;
@@ -83,11 +87,24 @@ public class CropSpawnerScript : MonoBehaviour
 
     void OnMouseDown()
         {
-        // Vector3 location = new Vector3(0.0f, 0.0f, -1.0f);
-        Vector3 location = getSpawnLocation();
-        if (!location.Equals(referencevector))
-            {
-            Instantiate(crop, location, Quaternion.identity);
+            if (Selected.GetComponent<SelectedScript>().getSelected() == 0){
+                // Vector3 location = new Vector3(0.0f, 0.0f, -1.0f);
+                Vector3 location = getSpawnLocation();
+                if (!location.Equals(referencevector))
+                    {
+                    Instantiate(crop, location, Quaternion.identity);
+                    money.GetComponent<MoneyScript>().takeMoney(price);
+                    }
+                }
             }
-        }
+        
+    
+    void OnMouseEnter(){
+        Background.GetComponent<SpriteRenderer>().color = Color.yellow;
+        panel.SetActive(true);
+    }
+    void OnMouseExit(){
+        Background.GetComponent<SpriteRenderer>().color = Color.white;
+        panel.SetActive(false);
+    }
 }
