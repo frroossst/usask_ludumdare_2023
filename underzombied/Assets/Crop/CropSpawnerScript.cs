@@ -90,7 +90,7 @@ public class CropSpawnerScript : MonoBehaviour
             if (Selected.GetComponent<SelectedScript>().getSelected() == 0){
                 // Vector3 location = new Vector3(0.0f, 0.0f, -1.0f);
                 Vector3 location = getSpawnLocation();
-                if (!location.Equals(referencevector))
+                if (!location.Equals(referencevector) && money.GetComponent<MoneyScript>().getMoney() >= price)
                     {
                     Instantiate(crop, location, Quaternion.identity);
                     money.GetComponent<MoneyScript>().takeMoney(price);
