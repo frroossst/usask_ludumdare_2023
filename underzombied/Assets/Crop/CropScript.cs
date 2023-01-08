@@ -12,10 +12,12 @@ public class CropScript : MonoBehaviour
 
     private float startTime = 0.0f;
 
+    private GameObject parentSpawnner;
 
     // Start is called before the first frame update
     void Start()
     {
+    parentSpawnner = GameObject.FindWithTag("cropSpawnner");
     }
 
     // Update is called once per frame
@@ -25,6 +27,10 @@ public class CropScript : MonoBehaviour
     if (this.startTime >= timeToWait)
         {
         money.GetComponent<MoneyScript>().addMoney(goldHarvest);
+        if (parentSpawnner != null)
+            {
+            parentSpawnner.GetComponent<CropSpawnerScript>().setSpawanClear(transform.position);
+            }
         Destroy(gameObject);
         }
         

@@ -8,9 +8,11 @@ public class CropSpawnerScript : MonoBehaviour
     private Vector3 referencevector = new Vector3(0.0f, 0.0f, 0.0f);
     public GameObject crop;
 
+    public float timeAlive;
+
     private SortedDictionary<int, Vector3> spawn_map = new SortedDictionary<int, Vector3>();
 
-    private bool[] map_occupied = new bool[15];
+    protected bool[] map_occupied = new bool[15];
 
     private Vector3 getSpawnLocation()
         {
@@ -23,6 +25,25 @@ public class CropSpawnerScript : MonoBehaviour
                 }
             }
         return referencevector;
+        }
+
+    public void setSpawanClear(Vector3 curr_location)
+        {
+        foreach (int key in spawn_map.Keys)
+            {
+            if (curr_location.Equals(spawn_map[key]))
+                {
+                map_occupied[key] = false;
+                }
+            }
+        // map_occupied[idx] = false;
+        // yield return StartCoroutine(sleepFor());
+        // map_occupied[idx] = false;
+        }
+
+    private IEnumerator sleepFor()
+        {
+        yield return new WaitForSeconds(timeAlive);
         }
 
 
@@ -58,15 +79,12 @@ public class CropSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnMouseDown()
         {
-        Debug.Log("clicked");
         // Vector3 location = new Vector3(0.0f, 0.0f, -1.0f);
         Vector3 location = getSpawnLocation();
-        Debug.Log(location.ToString());
         if (!location.Equals(referencevector))
             {
             Instantiate(crop, location, Quaternion.identity);
