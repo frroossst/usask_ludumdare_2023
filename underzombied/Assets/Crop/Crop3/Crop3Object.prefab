@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17eeee4c46e53379befdacc1289629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWait: 5
-  goldHarvest: 20
+  timeToWait: 30
+  goldHarvest: 69
   money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}

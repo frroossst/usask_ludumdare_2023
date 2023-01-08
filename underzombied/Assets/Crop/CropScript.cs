@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CropScript : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class CropScript : MonoBehaviour
     this.startTime = this.startTime + Time.deltaTime;
     if (this.startTime >= timeToWait)
         {
+        if (goldHarvest == 69)
+            {
+            System.Random rnd = new System.Random();
+            goldHarvest = rnd.Next(0, 50);
+            }
         money.GetComponent<MoneyScript>().addMoney(goldHarvest);
         if (parentSpawnner != null)
             {
