@@ -6,6 +6,8 @@ public class EnemyScript : MonoBehaviour
 {
     public BoxCollider2D bod;
 
+    public GameObject money;
+
     public int health = 100;
 
     private int dieCoins = 1;
@@ -21,6 +23,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         
     }
 

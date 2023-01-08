@@ -154,4 +154,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bod: {fileID: 5966189743640385361}
+  money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
   health: 100
