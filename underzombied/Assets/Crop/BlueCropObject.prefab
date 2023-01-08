@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213902863386777772}
   - component: {fileID: 213902863386777773}
-  - component: {fileID: -81029199498392169}
+  - component: {fileID: 2145995110613574912}
   m_Layer: 0
   m_Name: BlueCropObject
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-81029199498392169
+--- !u!114 &2145995110613574912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 213902863386777774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed1d5a12590217739231725ab11bd7c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc17eeee4c46e53379befdacc1289629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToWait: 5
+  goldHarvest: 20
+  money: {fileID: 5103575607363953805, guid: a814abbcede0a7544b334f73a002fded, type: 3}
