@@ -8,6 +8,8 @@ public class EnemyScript : MonoBehaviour
 
     public int health = 100;
 
+    private int dieCoins = 1;
+
     private string id = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class EnemyScript : MonoBehaviour
         if (health <= 0)
             {
             if (gameObject != null)
+                money.GetComponent<MoneyScript>().addMoney(dieCoins);
                 Destroy(gameObject); // instance management
             }
     }
