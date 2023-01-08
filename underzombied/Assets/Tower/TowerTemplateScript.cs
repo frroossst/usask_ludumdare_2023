@@ -16,7 +16,6 @@ public class TowerTemplateScript : MonoBehaviour
      // Start is called before the first frame update
     void Start()
     {
-        money = GameObject.FindGameObjectWithTag("Money");
     }
 
     // Update is called once per frame

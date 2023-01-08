@@ -20,7 +20,9 @@ public class MoneyScript : MonoBehaviour
         return CurrentMoney;
     }
     public void addMoney(int MoneyAdded){
+        Debug.Log("adding money");
         CurrentMoney = CurrentMoney + MoneyAdded;
+        Debug.Log("curr money: " + CurrentMoney);
     }
     public void takeMoney(int MoneyTaken){
         CurrentMoney = CurrentMoney - MoneyTaken;

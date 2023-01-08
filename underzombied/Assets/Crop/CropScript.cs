@@ -21,8 +21,8 @@ public class CropScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    startTime = startTime + Time.deltaTime;
-    if (startTime >= timeToWait)
+    this.startTime = this.startTime + Time.deltaTime;
+    if (this.startTime >= timeToWait)
         {
         money.GetComponent<MoneyScript>().addMoney(goldHarvest);
         Destroy(gameObject);
