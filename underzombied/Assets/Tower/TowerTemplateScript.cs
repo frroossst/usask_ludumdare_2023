@@ -18,12 +18,9 @@ public class TowerTemplateScript : MonoBehaviour
      // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         rangeView.GetComponent<RangeScript>().setSize(tower.GetComponent<TowerScript>().range * 2);
         Instantiate(rangeView, transform.position, Quaternion.identity);
 
-=======
->>>>>>> 6a2cd72936873e2eadb99a36d16f76353b3e38ce
     }
 
     // Update is called once per frame
