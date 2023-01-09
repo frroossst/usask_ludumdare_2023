@@ -1,3 +1,5 @@
+> :trophy: Won "Best Beginner Game" at the USask 2023 Ludum Dare Game Jam
+
 # Farm Tower Defense
 
 ## Introduction
